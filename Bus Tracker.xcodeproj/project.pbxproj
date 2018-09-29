@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7BC7F8222157503400E18B32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8212157503400E18B32 /* AppDelegate.swift */; };
-		7BC7F8242157503400E18B32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8232157503400E18B32 /* ViewController.swift */; };
 		7BC7F8272157503400E18B32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC7F8252157503400E18B32 /* Main.storyboard */; };
 		7BC7F82A2157503400E18B32 /* Bus_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8282157503400E18B32 /* Bus_Tracker.xcdatamodeld */; };
 		7BC7F82C2157503700E18B32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BC7F82B2157503700E18B32 /* Assets.xcassets */; };
 		7BC7F82F2157503700E18B32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC7F82D2157503700E18B32 /* LaunchScreen.storyboard */; };
 		7BC7F83A2157503700E18B32 /* Bus_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8392157503700E18B32 /* Bus_TrackerTests.swift */; };
 		7BC7F8452157503700E18B32 /* Bus_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8442157503700E18B32 /* Bus_TrackerUITests.swift */; };
+		7BC7F8542157EC6D00E18B32 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8532157EC6D00E18B32 /* MapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* Begin PBXFileReference section */
 		7BC7F81E2157503400E18B32 /* Bus Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bus Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC7F8212157503400E18B32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7BC7F8232157503400E18B32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7BC7F8262157503400E18B32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BC7F8292157503400E18B32 /* Bus_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bus_Tracker.xcdatamodel; sourceTree = "<group>"; };
 		7BC7F82B2157503700E18B32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		7BC7F8402157503700E18B32 /* Bus TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bus TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC7F8442157503700E18B32 /* Bus_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus_TrackerUITests.swift; sourceTree = "<group>"; };
 		7BC7F8462157503700E18B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BC7F8532157EC6D00E18B32 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				7BC7F8212157503400E18B32 /* AppDelegate.swift */,
-				7BC7F8232157503400E18B32 /* ViewController.swift */,
 				7BC7F8252157503400E18B32 /* Main.storyboard */,
 				7BC7F82B2157503700E18B32 /* Assets.xcassets */,
 				7BC7F82D2157503700E18B32 /* LaunchScreen.storyboard */,
 				7BC7F8302157503700E18B32 /* Info.plist */,
 				7BC7F8282157503400E18B32 /* Bus_Tracker.xcdatamodeld */,
+				7BC7F8522157EC4B00E18B32 /* Controller */,
 			);
 			path = "Bus Tracker";
 			sourceTree = "<group>";
@@ -126,6 +126,14 @@
 				7BC7F8462157503700E18B32 /* Info.plist */,
 			);
 			path = "Bus TrackerUITests";
+			sourceTree = "<group>";
+		};
+		7BC7F8522157EC4B00E18B32 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7BC7F8532157EC6D00E18B32 /* MapVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +267,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BC7F8242157503400E18B32 /* ViewController.swift in Sources */,
 				7BC7F82A2157503400E18B32 /* Bus_Tracker.xcdatamodeld in Sources */,
+				7BC7F8542157EC6D00E18B32 /* MapVC.swift in Sources */,
 				7BC7F8222157503400E18B32 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3RFW96FTG;
 				INFOPLIST_FILE = "Bus Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -445,7 +454,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "swang20.Bus-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3RFW96FTG;
 				INFOPLIST_FILE = "Bus Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -462,7 +472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "swang20.Bus-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

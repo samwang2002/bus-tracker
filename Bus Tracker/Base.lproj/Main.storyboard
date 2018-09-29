@@ -1,24 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MapVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapVC" customModule="Bus_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoV-GM-Uia">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="J9D-Mj-Rky" appends="YES" id="8hQ-Ey-2AN"/>
+                                    <outletCollection property="gestureRecognizers" destination="enJ-RO-Rxx" appends="YES" id="eGx-58-asP"/>
+                                    <outletCollection property="gestureRecognizers" destination="uf3-3I-hQ2" appends="YES" id="IUF-Td-NV6"/>
+                                </connections>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXQ-Tf-ENE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Bus Tracker" id="Erm-I5-DZb"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="FXQ-Tf-ENE" secondAttribute="top" id="EkO-Uv-GY0"/>
+                            <constraint firstItem="aoV-GM-Uia" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="F2X-WB-KYv"/>
+                            <constraint firstItem="aoV-GM-Uia" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kHy-BQ-qT6"/>
+                            <constraint firstItem="aoV-GM-Uia" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="kIY-KZ-tMt"/>
+                            <constraint firstAttribute="bottom" secondItem="aoV-GM-Uia" secondAttribute="bottom" id="tNj-B6-630"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="map" destination="aoV-GM-Uia" id="6js-QQ-2bh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="J9D-Mj-Rky">
+                    <connections>
+                        <action selector="pinchGestureDetected:" destination="BYZ-38-t0r" id="7za-Xu-9Fq"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="enJ-RO-Rxx">
+                    <connections>
+                        <action selector="rotationGestureDetected:" destination="BYZ-38-t0r" id="yBS-Gl-imv"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="uf3-3I-hQ2">
+                    <connections>
+                        <action selector="panGestureDetected:" destination="BYZ-38-t0r" id="PML-V3-RbW"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.23188405797103" y="132.06521739130434"/>
         </scene>
     </scenes>
 </document>
