@@ -31,8 +31,9 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        initLocationManager()
-        navigationItem.title = "Bus Tracker"
+        let trackingLocationButton: UIBarButtonItem = MKUserTrackingBarButtonItem(mapView: map)
+        navigationItem.leftBarButtonItem = trackingLocationButton
+        map.userTrackingMode = .follow
         
     }
     
@@ -48,18 +49,18 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         followingUserLocation = false
     }
     
+    @objc func toggleFollowingUserLocation() {
+        print("toggle")
+        followingUserLocation = !followingUserLocation
+    }
+    
     func initLocationManager() {
         
         locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.startUpdatingLocation()
+            //locationManager.startUpdatingLocation()
         }
-        
-    }
-    
-    func initNavBar() {
-        
         
     }
     

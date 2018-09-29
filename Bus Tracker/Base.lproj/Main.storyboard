@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wEd-VP-ykw">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MapVC-->
+        <!--Bus Tracker-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapVC" customModule="Bus_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,23 +26,19 @@
                                     <outletCollection property="gestureRecognizers" destination="uf3-3I-hQ2" appends="YES" id="IUF-Td-NV6"/>
                                 </connections>
                             </mapView>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXQ-Tf-ENE">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Bus Tracker" id="Erm-I5-DZb"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="FXQ-Tf-ENE" secondAttribute="top" id="EkO-Uv-GY0"/>
                             <constraint firstItem="aoV-GM-Uia" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="F2X-WB-KYv"/>
                             <constraint firstItem="aoV-GM-Uia" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kHy-BQ-qT6"/>
-                            <constraint firstItem="aoV-GM-Uia" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="kIY-KZ-tMt"/>
+                            <constraint firstItem="aoV-GM-Uia" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kIY-KZ-tMt"/>
                             <constraint firstAttribute="bottom" secondItem="aoV-GM-Uia" secondAttribute="bottom" id="tNj-B6-630"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Bus Tracker" id="7h8-FC-5va">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="uop-hy-PwK"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="map" destination="aoV-GM-Uia" id="6js-QQ-2bh"/>
                     </connections>
@@ -64,7 +60,25 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.23188405797103" y="132.06521739130434"/>
+            <point key="canvasLocation" x="1046.376811594203" y="131.91964285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FzX-FJ-GDK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wEd-VP-ykw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iKl-fZ-yUm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TrK-4B-GRK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="34J-nT-NiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.23188405797103" y="131.91964285714286"/>
         </scene>
     </scenes>
 </document>
