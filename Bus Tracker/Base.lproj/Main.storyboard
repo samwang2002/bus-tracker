@@ -20,11 +20,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoV-GM-Uia">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="J9D-Mj-Rky" appends="YES" id="8hQ-Ey-2AN"/>
-                                    <outletCollection property="gestureRecognizers" destination="enJ-RO-Rxx" appends="YES" id="eGx-58-asP"/>
-                                    <outletCollection property="gestureRecognizers" destination="uf3-3I-hQ2" appends="YES" id="IUF-Td-NV6"/>
-                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,28 +32,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bus Tracker" id="7h8-FC-5va">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="uop-hy-PwK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="uop-hy-PwK">
+                            <color key="tintColor" red="0.1247558037267105" green="0.66879857512953367" blue="0.14832507426333588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="onSettingsButtonPressed:" destination="BYZ-38-t0r" id="A44-Gt-Yu2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="map" destination="aoV-GM-Uia" id="6js-QQ-2bh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="J9D-Mj-Rky">
-                    <connections>
-                        <action selector="pinchGestureDetected:" destination="BYZ-38-t0r" id="7za-Xu-9Fq"/>
-                    </connections>
-                </pinchGestureRecognizer>
-                <rotationGestureRecognizer id="enJ-RO-Rxx">
-                    <connections>
-                        <action selector="rotationGestureDetected:" destination="BYZ-38-t0r" id="yBS-Gl-imv"/>
-                    </connections>
-                </rotationGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="uf3-3I-hQ2">
-                    <connections>
-                        <action selector="panGestureDetected:" destination="BYZ-38-t0r" id="PML-V3-RbW"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1046.376811594203" y="131.91964285714286"/>
         </scene>

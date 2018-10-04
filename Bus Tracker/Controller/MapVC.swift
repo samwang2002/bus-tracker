@@ -13,16 +13,6 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var map: MKMapView!
     
-    private var followingUserLocation = true
-    
-    private lazy var locationManager: CLLocationManager = {
-        var _locationManager = CLLocationManager()
-        _locationManager.delegate = self
-        _locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        _locationManager.activityType = CLActivityType.automotiveNavigation
-        return _locationManager
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,52 +21,46 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        initTrackingButton()
+        
+    }
+    
+    @IBAction func onSettingsButtonPressed(_ sender: UIBarButtonItem) {
+        
+        let settingsAlert = UIAlertController(title: "Settings", message: "", preferredStyle: .alert)
+        settingsAlert.addAction(UIAlertAction(title: "Login as driver", style: .default, handler: { action in
+            self.loginAsDriver()
+        }))
+        settingsAlert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+        self.present(settingsAlert, animated: true)
+        
+    }
+    
+    func loginAsDriver() {
+        
+        let loginAlert = UIAlertController(title: "Login as driver", message: "Enter ID and passcode to login", preferredStyle: .alert)
+        
+        loginAlert.addTextField { (textField) in
+            textField.placeholder = "ID"
+        }
+        loginAlert.addTextField { (textField) in
+            textField.placeholder = "Passcode"
+            textField.isSecureTextEntry = true
+        }
+        
+        loginAlert.addAction(UIAlertAction(title: "Login", style: .default, handler: nil))
+        loginAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(loginAlert, animated: true)
+        
+    }
+    
+    func initTrackingButton() {
+        
         let trackingLocationButton: UIBarButtonItem = MKUserTrackingBarButtonItem(mapView: map)
         navigationItem.leftBarButtonItem = trackingLocationButton
         map.userTrackingMode = .follow
         
-    }
-    
-    @IBAction func pinchGestureDetected(_ sender: UIPinchGestureRecognizer) {
-        followingUserLocation = false
-    }
-    
-    @IBAction func rotationGestureDetected(_ sender: UIRotationGestureRecognizer) {
-        followingUserLocation = false
-    }
-    
-    @IBAction func panGestureDetected(_ sender: UIPanGestureRecognizer) {
-        followingUserLocation = false
-    }
-    
-    @objc func toggleFollowingUserLocation() {
-        print("toggle")
-        followingUserLocation = !followingUserLocation
-    }
-    
-    func initLocationManager() {
-        
-        locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            //locationManager.startUpdatingLocation()
-        }
-        
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        if followingUserLocation {
-            
-            if let location = locationManager.location?.coordinate {
-                
-                print("\(location.latitude) \(location.longitude)")
-                let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025))
-                map.setRegion(region, animated: true)
-                
-            }
-            
-        }
     }
     
 }
