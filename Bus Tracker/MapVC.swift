@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import Firebase
 
-class MapVC: UIViewController, DBHandler {
+class MapVC: UIViewController, CLLocationManagerDelegate, DBHandler {
 
     @IBOutlet weak var map: MKMapView!
     
@@ -22,6 +22,7 @@ class MapVC: UIViewController, DBHandler {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        requestAndShowLocation()
         initTrackingButton()
         
     }
@@ -37,14 +38,41 @@ class MapVC: UIViewController, DBHandler {
         
     }
     
+    func requestAndShowLocation() {
+        
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        map.setUserTrackingMode(.follow, animated: true)
+        
+        print("location enabled: \(CLLocationManager.locationServicesEnabled())")
+        print("location: \(locationManager.location)")
+        //if CLLocationManager.locationServicesEnabled() {
+        print("user location: \(map.userLocation.coordinate)")
+        if locationManager.location == nil {
+            
+            let locationNotEnabledAlert = UIAlertController(title: "Location services not enabled", message: "Please enable location services in settings to display your location", preferredStyle: .alert)
+            
+            locationNotEnabledAlert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { (alert: UIAlertAction) in
+                
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    return
+                }
+                
+                UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
+                
+            }))
+            
+            self.present(locationNotEnabledAlert, animated: true)
+            
+        }
+        
+    }
+    
     func initTrackingButton() {
         
         let trackingLocationButton: UIBarButtonItem = MKUserTrackingBarButtonItem(mapView: map)
         navigationItem.leftBarButtonItem = trackingLocationButton
-        map.setUserTrackingMode(.follow, animated: true)
-        print("tracking mode = \(map.userTrackingMode)")
-        print("shows user location = \(map.showsUserLocation)")
-        //map.userTrackingMode = .follow
         
     }
     
