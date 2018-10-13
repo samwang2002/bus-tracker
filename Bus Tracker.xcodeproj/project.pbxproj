@@ -16,6 +16,7 @@
 		7BC7F83A2157503700E18B32 /* Bus_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8392157503700E18B32 /* Bus_TrackerTests.swift */; };
 		7BC7F8452157503700E18B32 /* Bus_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8442157503700E18B32 /* Bus_TrackerUITests.swift */; };
 		7BC7F8542157EC6D00E18B32 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8532157EC6D00E18B32 /* MapVC.swift */; };
+		7BCF92AF216E9F83003996F8 /* DriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92AE216E9F83003996F8 /* DriverVC.swift */; };
 		7BD317D72168F15200DF1A5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BD317D62168F15100DF1A5A /* GoogleService-Info.plist */; };
 		7BD317D9216A8F5900DF1A5A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD317D8216A8F5900DF1A5A /* Constants.swift */; };
 		7BD317DB216A8FA500DF1A5A /* DBReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD317DA216A8FA500DF1A5A /* DBReference.swift */; };
@@ -62,6 +63,7 @@
 		7BC7F8442157503700E18B32 /* Bus_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus_TrackerUITests.swift; sourceTree = "<group>"; };
 		7BC7F8462157503700E18B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BC7F8532157EC6D00E18B32 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		7BCF92AE216E9F83003996F8 /* DriverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverVC.swift; sourceTree = "<group>"; };
 		7BD317D62168F15100DF1A5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7BD317D8216A8F5900DF1A5A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7BD317DA216A8FA500DF1A5A /* DBReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBReference.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				7BC7F8212157503400E18B32 /* AppDelegate.swift */,
 				7BC7F8532157EC6D00E18B32 /* MapVC.swift */,
+				7BCF92AE216E9F83003996F8 /* DriverVC.swift */,
 				7BD317D8216A8F5900DF1A5A /* Constants.swift */,
 				7BD317DA216A8FA500DF1A5A /* DBReference.swift */,
 				7BC7F8252157503400E18B32 /* Main.storyboard */,
@@ -412,6 +415,7 @@
 				7BC7F8542157EC6D00E18B32 /* MapVC.swift in Sources */,
 				7BC7F8222157503400E18B32 /* AppDelegate.swift in Sources */,
 				7BD317DB216A8FA500DF1A5A /* DBReference.swift in Sources */,
+				7BCF92AF216E9F83003996F8 /* DriverVC.swift in Sources */,
 				7BD317D9216A8F5900DF1A5A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

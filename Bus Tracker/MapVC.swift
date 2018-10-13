@@ -45,10 +45,6 @@ class MapVC: UIViewController, CLLocationManagerDelegate, DBHandler {
         locationManager.requestWhenInUseAuthorization()
         map.setUserTrackingMode(.follow, animated: true)
         
-        print("location enabled: \(CLLocationManager.locationServicesEnabled())")
-        print("location: \(locationManager.location)")
-        //if CLLocationManager.locationServicesEnabled() {
-        print("user location: \(map.userLocation.coordinate)")
         if locationManager.location == nil {
             
             let locationNotEnabledAlert = UIAlertController(title: "Location services not enabled", message: "Please enable location services in settings to display your location", preferredStyle: .alert)
@@ -62,6 +58,8 @@ class MapVC: UIViewController, CLLocationManagerDelegate, DBHandler {
                 UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
                 
             }))
+            
+            locationNotEnabledAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             
             self.present(locationNotEnabledAlert, animated: true)
             
@@ -97,7 +95,8 @@ class MapVC: UIViewController, CLLocationManagerDelegate, DBHandler {
     func loginAsDriver(enteredKey: String) {
         
         if enteredKey == Constants.key {
-            print("correct!")
+            // segue to driver view
+            self.performSegue(withIdentifier: "UserToDriverSegue", sender: nil)
         }
         
     }
