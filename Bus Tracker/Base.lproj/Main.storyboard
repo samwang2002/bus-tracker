@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wEd-VP-ykw">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapVC" customModule="Bus_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoV-GM-Uia">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <gestureRecognizers/>
                             </mapView>
                         </subviews>
@@ -32,6 +32,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bus Tracker" id="7h8-FC-5va">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="qfE-aB-vWC"/>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="uop-hy-PwK">
                             <color key="tintColor" red="0.1247558037267105" green="0.66879857512953367" blue="0.14832507426333588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -41,7 +42,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="map" destination="aoV-GM-Uia" id="6js-QQ-2bh"/>
-                        <segue destination="LBA-oc-ZQ5" kind="presentation" identifier="UserToDriverSegue" id="Xxb-hS-xA3"/>
+                        <segue destination="GnD-RG-RmI" kind="show" identifier="UserToDriverNavSegue" id="Sn5-4L-ZXc"/>
+                        <segue destination="5o8-lE-K7v" kind="show" identifier="UserToDriverSegue" id="uau-dg-ZNi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -53,32 +55,49 @@
             <objects>
                 <viewController id="5o8-lE-K7v" customClass="DriverVC" customModule="Bus_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ah-ie-kMM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mpM-io-WCB">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                             </mapView>
+                            <toolbar opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7G-J7-nX2">
+                                <rect key="frame" x="0.0" y="685" width="375" height="44"/>
+                                <viewLayoutGuide key="safeArea" id="8nz-ZJ-ubZ"/>
+                                <items>
+                                    <barButtonItem systemItem="flexibleSpace" id="kQh-Sw-vzW"/>
+                                    <barButtonItem title="Begin trip" id="9hN-QH-byg">
+                                        <connections>
+                                            <action selector="onToggleTripButtonPressed:" destination="5o8-lE-K7v" id="aGn-7Y-ve8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mpM-io-WCB" firstAttribute="top" secondItem="6wj-Li-5Bz" secondAttribute="top" id="KOE-Ce-bkq"/>
-                            <constraint firstItem="mpM-io-WCB" firstAttribute="leading" secondItem="6wj-Li-5Bz" secondAttribute="leading" id="heg-QY-l4O"/>
-                            <constraint firstItem="mpM-io-WCB" firstAttribute="trailing" secondItem="6wj-Li-5Bz" secondAttribute="trailing" id="iRj-1F-q7E"/>
-                            <constraint firstAttribute="bottom" secondItem="mpM-io-WCB" secondAttribute="bottom" id="lcH-wq-8sW"/>
+                            <constraint firstItem="y7G-J7-nX2" firstAttribute="top" secondItem="6wj-Li-5Bz" secondAttribute="bottom" constant="-44" id="Fc9-UI-0BB"/>
+                            <constraint firstItem="mpM-io-WCB" firstAttribute="trailing" secondItem="6wj-Li-5Bz" secondAttribute="trailing" id="GDm-bR-KoN"/>
+                            <constraint firstItem="mpM-io-WCB" firstAttribute="bottom" secondItem="6wj-Li-5Bz" secondAttribute="bottom" id="TSi-Zi-xYI"/>
+                            <constraint firstItem="mpM-io-WCB" firstAttribute="leading" secondItem="6wj-Li-5Bz" secondAttribute="leading" id="bue-fp-cRW"/>
+                            <constraint firstItem="y7G-J7-nX2" firstAttribute="trailing" secondItem="6wj-Li-5Bz" secondAttribute="trailing" id="mQr-Te-k8k"/>
+                            <constraint firstItem="y7G-J7-nX2" firstAttribute="leading" secondItem="6wj-Li-5Bz" secondAttribute="leading" id="pLc-0t-n9G"/>
+                            <constraint firstItem="mpM-io-WCB" firstAttribute="top" secondItem="6wj-Li-5Bz" secondAttribute="top" id="u8M-A6-NK8"/>
+                            <constraint firstItem="6wj-Li-5Bz" firstAttribute="bottom" secondItem="y7G-J7-nX2" secondAttribute="bottom" id="vax-wR-sd8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6wj-Li-5Bz"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Driver View" id="xhP-9N-7UA">
-                        <barButtonItem key="rightBarButtonItem" title="Start trip" id="gFE-Va-8U2"/>
-                    </navigationItem>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Driver View" id="xhP-9N-7UA"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="map" destination="mpM-io-WCB" id="KQq-Sl-ynF"/>
+                        <outlet property="toolbar" destination="y7G-J7-nX2" id="uaE-xM-7Qd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vtg-np-3tz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1955.072463768116" y="849.77678571428567"/>
+            <point key="canvasLocation" x="1516" y="875.61576354679812"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FzX-FJ-GDK">
@@ -86,7 +105,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wEd-VP-ykw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iKl-fZ-yUm">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -102,23 +121,29 @@
             <point key="canvasLocation" x="136.23188405797103" y="131.91964285714286"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="f3e-cR-1CS">
+        <scene sceneID="IdV-Oe-J3p">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LBA-oc-ZQ5" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GnD-RG-RmI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xux-Ym-tOF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wu1-6S-rYg">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ADR-Jp-aF9">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="5o8-lE-K7v" kind="relationship" relationship="rootViewController" id="0pk-yo-kSA"/>
+                        <segue destination="5o8-lE-K7v" kind="relationship" relationship="rootViewController" id="Aji-Vi-gM4"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uBJ-41-bL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vHE-ns-IoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044.9275362318842" y="849.77678571428567"/>
+            <point key="canvasLocation" x="574" y="876"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Aji-Vi-gM4"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.1247558037" green="0.66879857509999996" blue="0.1483250743" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

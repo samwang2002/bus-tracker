@@ -7,21 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		150ABC9079F9EEDF35125306 /* Pods_Bus_TrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17BF51ABD8EF81A12C046BEA /* Pods_Bus_TrackerTests.framework */; };
 		7BC7F8222157503400E18B32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8212157503400E18B32 /* AppDelegate.swift */; };
 		7BC7F8272157503400E18B32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC7F8252157503400E18B32 /* Main.storyboard */; };
 		7BC7F82A2157503400E18B32 /* Bus_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8282157503400E18B32 /* Bus_Tracker.xcdatamodeld */; };
 		7BC7F82C2157503700E18B32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BC7F82B2157503700E18B32 /* Assets.xcassets */; };
 		7BC7F82F2157503700E18B32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC7F82D2157503700E18B32 /* LaunchScreen.storyboard */; };
-		7BC7F83A2157503700E18B32 /* Bus_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8392157503700E18B32 /* Bus_TrackerTests.swift */; };
-		7BC7F8452157503700E18B32 /* Bus_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8442157503700E18B32 /* Bus_TrackerUITests.swift */; };
 		7BC7F8542157EC6D00E18B32 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7F8532157EC6D00E18B32 /* MapVC.swift */; };
 		7BCF92AF216E9F83003996F8 /* DriverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92AE216E9F83003996F8 /* DriverVC.swift */; };
 		7BD317D72168F15200DF1A5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BD317D62168F15100DF1A5A /* GoogleService-Info.plist */; };
 		7BD317D9216A8F5900DF1A5A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD317D8216A8F5900DF1A5A /* Constants.swift */; };
 		7BD317DB216A8FA500DF1A5A /* DBReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD317DA216A8FA500DF1A5A /* DBReference.swift */; };
-		CC6A5D1D5417D27A20EB90CF /* Pods_Bus_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D00C09FF2E2120C54F8531 /* Pods_Bus_Tracker.framework */; };
-		EC813D83863C5645BC714101 /* Pods_Bus_TrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8E213F2928D8E6A95D0735 /* Pods_Bus_TrackerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,26 +37,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D8E213F2928D8E6A95D0735 /* Pods_Bus_TrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bus_TrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		17BF51ABD8EF81A12C046BEA /* Pods_Bus_TrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bus_TrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA2BB2771848EF6E006B6C6 /* Pods-Bus TrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bus TrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bus TrackerTests/Pods-Bus TrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		23D00C09FF2E2120C54F8531 /* Pods_Bus_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bus_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A39493422A1E201EF4FAE0A /* Pods-Bus TrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bus TrackerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bus TrackerUITests/Pods-Bus TrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		56749687A5E3A38AC8DCC890 /* Pods-Bus Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bus Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bus Tracker/Pods-Bus Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		6C8DAE6EE086ACD98F4DBF5D /* Pods-Bus TrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bus TrackerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bus TrackerUITests/Pods-Bus TrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7BC7F81E2157503400E18B32 /* Bus Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bus Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BC7F81E2157503400E18B32 /* Bus Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Bus Tracker.app"; path = "/Users/samwang2002/Desktop/Programming/Swift/Bus Tracker/build/Debug-iphoneos/Bus Tracker.app"; sourceTree = "<absolute>"; };
 		7BC7F8212157503400E18B32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BC7F8262157503400E18B32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BC7F8292157503400E18B32 /* Bus_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bus_Tracker.xcdatamodel; sourceTree = "<group>"; };
 		7BC7F82B2157503700E18B32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BC7F82E2157503700E18B32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BC7F8302157503700E18B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7BC7F8352157503700E18B32 /* Bus TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bus TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7BC7F8392157503700E18B32 /* Bus_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus_TrackerTests.swift; sourceTree = "<group>"; };
-		7BC7F83B2157503700E18B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7BC7F8402157503700E18B32 /* Bus TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bus TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7BC7F8442157503700E18B32 /* Bus_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus_TrackerUITests.swift; sourceTree = "<group>"; };
-		7BC7F8462157503700E18B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BC7F8352157503700E18B32 /* Bus TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Bus TrackerTests.xctest"; path = "/Users/samwang2002/Desktop/Programming/Swift/Bus Tracker/build/Debug-iphoneos/Bus TrackerTests.xctest"; sourceTree = "<absolute>"; };
+		7BC7F8402157503700E18B32 /* Bus TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Bus TrackerUITests.xctest"; path = "/Users/samwang2002/Desktop/Programming/Swift/Bus Tracker/build/Debug-iphoneos/Bus TrackerUITests.xctest"; sourceTree = "<absolute>"; };
 		7BC7F8532157EC6D00E18B32 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		7BCF92AE216E9F83003996F8 /* DriverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverVC.swift; sourceTree = "<group>"; };
 		7BD317D62168F15100DF1A5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -76,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC6A5D1D5417D27A20EB90CF /* Pods_Bus_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				150ABC9079F9EEDF35125306 /* Pods_Bus_TrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC813D83863C5645BC714101 /* Pods_Bus_TrackerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,36 +97,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		2ED8160DAE9AA10C0E517B69 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				23D00C09FF2E2120C54F8531 /* Pods_Bus_Tracker.framework */,
-				17BF51ABD8EF81A12C046BEA /* Pods_Bus_TrackerTests.framework */,
-				0D8E213F2928D8E6A95D0735 /* Pods_Bus_TrackerUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		7BC7F8152157503300E18B32 = {
 			isa = PBXGroup;
 			children = (
 				7BC7F8202157503400E18B32 /* Bus Tracker */,
-				7BC7F8382157503700E18B32 /* Bus TrackerTests */,
-				7BC7F8432157503700E18B32 /* Bus TrackerUITests */,
-				7BC7F81F2157503400E18B32 /* Products */,
 				2C0D378E91D673B3898A5916 /* Pods */,
-				2ED8160DAE9AA10C0E517B69 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		7BC7F81F2157503400E18B32 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7BC7F81E2157503400E18B32 /* Bus Tracker.app */,
-				7BC7F8352157503700E18B32 /* Bus TrackerTests.xctest */,
-				7BC7F8402157503700E18B32 /* Bus TrackerUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		7BC7F8202157503400E18B32 /* Bus Tracker */ = {
@@ -160,24 +121,6 @@
 				7BC7F8282157503400E18B32 /* Bus_Tracker.xcdatamodeld */,
 			);
 			path = "Bus Tracker";
-			sourceTree = "<group>";
-		};
-		7BC7F8382157503700E18B32 /* Bus TrackerTests */ = {
-			isa = PBXGroup;
-			children = (
-				7BC7F8392157503700E18B32 /* Bus_TrackerTests.swift */,
-				7BC7F83B2157503700E18B32 /* Info.plist */,
-			);
-			path = "Bus TrackerTests";
-			sourceTree = "<group>";
-		};
-		7BC7F8432157503700E18B32 /* Bus TrackerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				7BC7F8442157503700E18B32 /* Bus_TrackerUITests.swift */,
-				7BC7F8462157503700E18B32 /* Info.plist */,
-			);
-			path = "Bus TrackerUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +215,7 @@
 				Base,
 			);
 			mainGroup = 7BC7F8152157503300E18B32;
-			productRefGroup = 7BC7F81F2157503400E18B32 /* Products */;
+			productRefGroup = 7BC7F8152157503300E18B32;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -424,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BC7F83A2157503700E18B32 /* Bus_TrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +374,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BC7F8452157503700E18B32 /* Bus_TrackerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

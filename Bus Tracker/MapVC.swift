@@ -22,8 +22,10 @@ class MapVC: UIViewController, CLLocationManagerDelegate, DBHandler {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        performSegue(withIdentifier: "UserToDriverSegue", sender: nil)
         requestAndShowLocation()
         initTrackingButton()
+        //initBackButton()
         
     }
     
@@ -47,7 +49,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate, DBHandler {
         
         if locationManager.location == nil {
             
-            let locationNotEnabledAlert = UIAlertController(title: "Location services not enabled", message: "Please enable location services in settings to display your location", preferredStyle: .alert)
+            let locationNotEnabledAlert = UIAlertController(title: "Cannot detect location", message: "Please make sure location services are enabled", preferredStyle: .alert)
             
             locationNotEnabledAlert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { (alert: UIAlertAction) in
                 
@@ -74,6 +76,14 @@ class MapVC: UIViewController, CLLocationManagerDelegate, DBHandler {
         
     }
     
+    func initBackButton() {
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = "Back"
+        navigationItem.backBarButtonItem = backButton
+        
+    }
+    
     func loginAsDriverPopup() {
         
         let loginAlert = UIAlertController(title: "Login as driver", message: "Enter ID to login", preferredStyle: .alert)
@@ -96,8 +106,23 @@ class MapVC: UIViewController, CLLocationManagerDelegate, DBHandler {
         
         if enteredKey == Constants.key {
             // segue to driver view
-            self.performSegue(withIdentifier: "UserToDriverSegue", sender: nil)
+            performSegue(withIdentifier: "UserToDriverSegue", sender: nil)
         }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // create back button
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
+        
+    }
+    
+    func updateBusLocation(bus: String, location: CLLocation) {
+        
+        
         
     }
     

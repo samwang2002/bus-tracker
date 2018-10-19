@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 import FirebaseDatabase
 
 class DBReference {
@@ -26,6 +27,44 @@ class DBReference {
     init() {
         
         ref = Database.database().reference()
+        observeAllBusLocationUpdates()
+        
+    }
+    
+    func updateBusLocation(bus: String, location: CLLocation) {
+        
+        ref.child(bus).setValue([Constants.lat : location.coordinate.latitude, Constants.long : location.coordinate.longitude])
+        
+    }
+    
+    func observeBusLocationUpdate(bus: String) {
+        
+        ref.child(bus).observe(.value, with: { (snapshot: DataSnapshot) in
+            
+            guard let locationDict = snapshot.value as? [String : Any] else {
+                return
+            }
+            
+            let busLocation = CLLocation(latitude: locationDict[Constants.lat] as! CLLocationDegrees, longitude: locationDict[Constants.long] as! CLLocationDegrees)
+            self.delegate.updateBusLocation(bus: bus, location: busLocation)
+            
+        })
+        
+    }
+    
+    func observeAllBusLocationUpdates() {
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot: DataSnapshot) in
+            
+            if let busDict = snapshot.children.allObjects as [String : Any] {
+            
+                for bus in busDict {
+                    self.observeBusLocationUpdate(bus: bus.value! as! String)
+                }
+                
+            }
+            
+        })
         
     }
     
@@ -56,6 +95,6 @@ class DBReference {
 
 protocol DBHandler {
     
-    //func retrieveKey()
+    func updateBusLocation(bus: String, location: CLLocation)
     
 }
