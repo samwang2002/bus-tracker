@@ -122,7 +122,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate, DBHandler {
     
     func updateBusLocation(bus: String, location: CLLocation) {
         
-        
+        print(location)
         
     }
     

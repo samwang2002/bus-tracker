@@ -27,7 +27,6 @@ class DBReference {
     init() {
         
         ref = Database.database().reference()
-        observeAllBusLocationUpdates()
         
     }
     
@@ -45,24 +44,16 @@ class DBReference {
                 return
             }
             
-            let busLocation = CLLocation(latitude: locationDict[Constants.lat] as! CLLocationDegrees, longitude: locationDict[Constants.long] as! CLLocationDegrees)
-            self.delegate.updateBusLocation(bus: bus, location: busLocation)
-            
-        })
-        
-    }
-    
-    func observeAllBusLocationUpdates() {
-        
-        ref.observeSingleEvent(of: .value, with: { (snapshot: DataSnapshot) in
-            
-            if let busDict = snapshot.children.allObjects as [String : Any] {
-            
-                for bus in busDict {
-                    self.observeBusLocationUpdate(bus: bus.value! as! String)
-                }
-                
+            guard let latitude = locationDict[Constants.lat] as? CLLocationDegrees else {
+                return
             }
+            
+            guard let longitude = locationDict[Constants.long] as? CLLocationDegrees else {
+                return
+            }
+            
+            let busLocation = CLLocation(latitude: latitude, longitude: longitude)
+            self.delegate.updateBusLocation(bus: bus, location: busLocation)
             
         })
         

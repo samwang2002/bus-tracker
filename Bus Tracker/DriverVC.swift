@@ -15,7 +15,7 @@ class DriverVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var toolbar: UIToolbar!
     
     var locationManager: CLLocationManager!
-    let busNumber = 100
+    let busNumber = 101
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,8 @@ class DriverVC: UIViewController, CLLocationManagerDelegate {
         
         if sender.title == "Begin trip" {
             
+            print("start updating")
+            //DBReference.Instance.observeBusLocationUpdate(bus: "\(busNumber)")
             sender.title = "End trip"
             
             // initialize location manager
@@ -49,10 +51,11 @@ class DriverVC: UIViewController, CLLocationManagerDelegate {
             locationManager.activityType = .automotiveNavigation
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
-            print(map.userLocation.coordinate)
+            //print(map.userLocation.coordinate)
             
         } else {
             
+            print("end updating")
             sender.title = "Begin trip"
             locationManager.stopUpdatingLocation()
             
@@ -61,8 +64,6 @@ class DriverVC: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        print("location updated")
         
         if let currentLocation = locations.last {
             print("\(currentLocation.coordinate.latitude) \(currentLocation.coordinate.longitude)")
